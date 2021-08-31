@@ -1,5 +1,6 @@
 ﻿using eHyperStore.Data.Entities;
 using eHyperStore.Data.Enums;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,38 @@ namespace eHyperStore.Data.Extensions
             modelBuilder.Entity<ProductInCategory>().HasData(
                 new ProductInCategory() { ProductId = 1, CategoryId = 1 }
                 );
+            // any guid
+            var roleId = new Guid("09A7BCDF-396C-4E25-B159-3F5D5BEB671B");
+            var adminId = new Guid("42F80CCE-24C7-491B-8C70-B1908C66DF23");
+            modelBuilder.Entity<AppRole>().HasData(new AppRole
+            {
+                Id = roleId,
+                Name = "admin",
+                NormalizedName = "admin",
+                Description = "Administrator role"
+            });
+
+            var hasher = new PasswordHasher<AppUser>();
+            modelBuilder.Entity<AppUser>().HasData(new AppUser
+            {
+                Id = adminId,
+                UserName = "admin",
+                NormalizedUserName = "admin",
+                Email = "locnhgcs17219@fpt.edu.vn",
+                NormalizedEmail = "locnhgcs17219@fpt.edu.vn",
+                EmailConfirmed = true,
+                PasswordHash = hasher.HashPassword(null, "Hieuloc12345"),
+                SecurityStamp = string.Empty,
+                FirstName = "Loc",
+                LastName = "Nguyen",
+                Dob = new DateTime(1999, 11, 17)
+            });
+
+            modelBuilder.Entity<IdentityUserRole<Guid>>().HasData(new IdentityUserRole<Guid>
+            {
+                RoleId = roleId,
+                UserId = adminId
+            });
         }
     }
 }
