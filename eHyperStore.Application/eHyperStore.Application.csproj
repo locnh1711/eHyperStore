@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eHyperStore.Data\eHyperStore.Data.csproj" />
+    <ProjectReference Include="..\eHyperStore.Utilities\eHyperStore.Utilities.csproj" />
+  </ItemGroup>
+
 </Project>
