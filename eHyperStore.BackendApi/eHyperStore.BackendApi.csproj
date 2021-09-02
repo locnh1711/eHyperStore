@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\eHyperStore.Application\eHyperStore.Application.csproj" />
+    <ProjectReference Include="..\eHyperStore.Data\eHyperStore.Data.csproj" />
+    <ProjectReference Include="..\eHyperStore.Utilities\eHyperStore.Utilities.csproj" />
+    <ProjectReference Include="..\eHyperStore.ViewModels\eHyperStore.ViewModels.csproj" />
+  </ItemGroup>
+
+</Project>

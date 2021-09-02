@@ -180,7 +180,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = new Guid("09a7bcdf-396c-4e25-b159-3f5d5beb671b"),
-                            ConcurrencyStamp = "39af6473-b973-406e-8b92-2d5c6d7b55dd",
+                            ConcurrencyStamp = "8257c90f-0708-4822-b363-166449ff1d85",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -257,7 +257,7 @@ namespace eHyperStore.Data.Migrations
                         {
                             Id = new Guid("42f80cce-24c7-491b-8c70-b1908c66df23"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "1e178089-9bcd-47ef-86bd-cbbdc59577fe",
+                            ConcurrencyStamp = "658b4988-08be-4034-b582-b45f23526347",
                             Dob = new DateTime(1999, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "locnhgcs17219@fpt.edu.vn",
                             EmailConfirmed = true,
@@ -266,7 +266,7 @@ namespace eHyperStore.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "locnhgcs17219@fpt.edu.vn",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEFBzEkA+wZLRSxnliuYYjY3oyOZDgf3Al7RFqSCTZlqgC+daUPBetJYhSkVuGo16Tg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEChxFsRv5ZNAJ8ODy0T47PbpyN5q+uDWAgMfsEuLdxil/c/fBk+rAQzHjteR5UhNfQ==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -614,7 +614,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 9, 1, 23, 12, 20, 114, DateTimeKind.Local).AddTicks(6709),
+                            DateCreated = new DateTime(2021, 9, 2, 0, 29, 30, 152, DateTimeKind.Local).AddTicks(1892),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -638,8 +638,8 @@ namespace eHyperStore.Data.Migrations
                     b.Property<DateTime>("DateCreated")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("FileSize")
-                        .HasColumnType("int");
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("ImagePath")
                         .IsRequired()

@@ -8,7 +8,7 @@ using System.Text;
 
 namespace eHyperStore.Data.EF
 {
-    internal class EHyperDbContextFactory : IDesignTimeDbContextFactory<EHyperDbContext>
+    public class EHyperDbContextFactory : IDesignTimeDbContextFactory<EHyperDbContext>
     {
         public EHyperDbContext CreateDbContext(string[] args)
         {
