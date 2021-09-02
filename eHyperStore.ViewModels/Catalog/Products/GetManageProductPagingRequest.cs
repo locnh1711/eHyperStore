@@ -1,11 +1,11 @@
-﻿using eHyperStore.Application.Dtos;
+﻿using eHyperStore.ViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace eHyperStore.Application.Catalog.Products.Dtos.Manage
+namespace eHyperStore.ViewModels.Catalog.Products
 {
-    public class GetProductPagingRequest : PagingRequestBase
+    public class GetManageProductPagingRequest : PagingRequestBase
     {
         public string Keyword { get; set; }
 

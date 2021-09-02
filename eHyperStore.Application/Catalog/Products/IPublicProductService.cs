@@ -1,15 +1,14 @@
-﻿using eHyperStore.Application.Catalog.Products.Dtos;
-using eHyperStore.Application.Catalog.Products.Dtos.Public;
-using eHyperStore.Application.Dtos;
-using System;
+﻿using eHyperStore.ViewModels.Catalog.Products;
+using eHyperStore.ViewModels.Common;
 using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace eHyperStore.Application.Catalog.Products
 {
     public interface IPublicProductService
     {
-        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetProductPagingRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(GetPublicProductPagingRequest request);
+
+        Task<List<ProductViewModel>> GetAll();
     }
 }

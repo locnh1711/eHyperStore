@@ -14,6 +14,7 @@ namespace eHyperStore.Data.Configurations
             builder.ToTable("ProductTranslations");
 
             builder.HasKey(x => x.Id);
+
             builder.Property(x => x.Id).UseIdentityColumn();
 
             builder.Property(x => x.Name).IsRequired().HasMaxLength(200);

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace eHyperStore.Application.Dtos
+namespace eHyperStore.ViewModels.Common
 {
     public class PagedResult<T>
     {
