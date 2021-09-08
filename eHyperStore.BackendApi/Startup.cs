@@ -1,4 +1,5 @@
 using eHyperStore.Application.Catalog.Products;
+using eHyperStore.Application.Common;
 using eHyperStore.Data.EF;
 using eHyperStore.Utilities.Constants;
 using Microsoft.AspNetCore.Builder;
@@ -32,7 +33,11 @@ namespace eHyperStore.BackendApi
                 options.UseSqlServer(Configuration.GetConnectionString(SystemConstants.MainConnectionString)));
 
             //Declare DI
+            services.AddTransient<IStorageService, FileStorageService>();
+
             services.AddTransient<IPublicProductService, PublicProductService>();
+
+            services.AddTransient<IManageProductService, ManageProductService>();
 
             services.AddControllersWithViews();
 
