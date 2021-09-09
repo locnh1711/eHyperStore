@@ -1,4 +1,5 @@
-﻿using eHyperStore.ViewModels.Catalog.Products;
+﻿using eHyperStore.ViewModels.Catalog.ProductImages;
+using eHyperStore.ViewModels.Catalog.Products;
 using eHyperStore.ViewModels.Common;
 using Microsoft.AspNetCore.Http;
 using System.Collections.Generic;
@@ -22,13 +23,15 @@ namespace eHyperStore.Application.Catalog.Products
 
         Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
-        Task<int> AddImages(int productId, List<IFormFile> files);
+        Task<int> AddImage(int productId, ProductImageCreateRequest request);
 
-        Task<int> RemoveImages(int imageId);
+        Task<int> RemoveImage(int imageId);
 
-        Task<int> UpdateImage(int imageId, string caption, bool isDefault);
+        Task<int> UpdateImage(int imageId, ProductImageUpdateRequest request);
 
-        Task<List<ProductImageViewModel>> GetListImage(int productId);
+        Task<List<ProductImageViewModel>> GetListImages(int productId);
+
+        Task<ProductImageViewModel> GetImageById(int imageId);
 
         Task<ProductViewModel> GetById(int productId, string languageId);
     }
