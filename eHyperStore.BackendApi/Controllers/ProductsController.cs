@@ -1,13 +1,16 @@
 ﻿using eHyperStore.Application.Catalog.Products;
 using eHyperStore.ViewModels.Catalog.ProductImages;
 using eHyperStore.ViewModels.Catalog.Products;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace eHyperStore.BackendApi.Controllers
 {
+    //api/product
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class ProductsController : ControllerBase
     {
         private readonly IPublicProductService _publicProductService;
