@@ -1,4 +1,5 @@
-﻿using eHyperStore.ViewModels.System.Users;
+﻿using eHyperStore.ViewModels.Common;
+using eHyperStore.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -11,5 +12,7 @@ namespace eHyperStore.Application.System.Users
         Task<string> Authencate(LoginRequest request);
 
         Task<bool> Register(RegisterRequest request);
+
+        Task<PagedResult<UserVm>> GetUserPaging(GetUserPagingRequest request);
     }
 }

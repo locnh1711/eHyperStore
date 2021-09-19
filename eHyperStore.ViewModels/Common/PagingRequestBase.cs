@@ -4,7 +4,7 @@ using System.Text;
 
 namespace eHyperStore.ViewModels.Common
 {
-    public class PagingRequestBase
+    public class PagingRequestBase : RequestBase
     {
         public int PageIndex { get; set; }
 

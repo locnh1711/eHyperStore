@@ -1,4 +1,5 @@
-﻿using eHyperStore.ViewModels.System.Users;
+﻿using eHyperStore.ViewModels.Common;
+using eHyperStore.ViewModels.System.Users;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,5 +10,7 @@ namespace eHyperStore.AdminApp.Services
     public interface IUserApiClient
     {
         Task<string> Authenticate(LoginRequest request);
+
+        Task<PagedResult<UserVm>> GetUsersPaging(GetUserPagingRequest request);
     }
 }
