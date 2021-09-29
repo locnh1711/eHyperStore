@@ -20,5 +20,7 @@ namespace eHyperStore.AdminApp.Services
         Task<ApiResult<UserVm>> GetById(Guid id);
 
         Task<ApiResult<bool>> Delete(Guid id);
+
+        Task<ApiResult<bool>> RoleAssign(Guid id, RoleAssignRequest request);
     }
 }
