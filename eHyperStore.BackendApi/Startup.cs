@@ -1,5 +1,6 @@
 using eHyperStore.Application.Catalog.Products;
 using eHyperStore.Application.Common;
+using eHyperStore.Application.System.Roles;
 using eHyperStore.Application.System.Users;
 using eHyperStore.Data.EF;
 using eHyperStore.Data.Entities;
@@ -49,6 +50,7 @@ namespace eHyperStore.BackendApi
 
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<IUserService, UserService>();
+            services.AddTransient<IRoleService, RoleService>();
 
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
