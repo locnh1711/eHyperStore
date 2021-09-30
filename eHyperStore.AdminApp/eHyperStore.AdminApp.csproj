@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\eHyperStore.Utilities\eHyperStore.Utilities.csproj" />
     <ProjectReference Include="..\eHyperStore.ViewModels\eHyperStore.ViewModels.csproj" />
   </ItemGroup>
 
