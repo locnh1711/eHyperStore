@@ -21,7 +21,7 @@ namespace eHyperStore.Application.Catalog.Products
 
         Task AddViewcount(int productId);
 
-        Task<PagedResult<ProductVm>> GetAllPaging(GetManageProductPagingRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllPaging(GetManageProductPagingRequest request);
 
         Task<int> AddImage(int productId, ProductImageCreateRequest request);
 
@@ -33,8 +33,8 @@ namespace eHyperStore.Application.Catalog.Products
 
         Task<ProductImageViewModel> GetImageById(int imageId);
 
-        Task<ProductVm> GetById(int productId, string languageId);
+        Task<ProductViewModel> GetById(int productId, string languageId);
 
-        Task<PagedResult<ProductVm>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
+        Task<PagedResult<ProductViewModel>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
     }
 }
