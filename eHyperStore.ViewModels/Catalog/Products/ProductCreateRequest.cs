@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace eHyperStore.ViewModels.Catalog.Products
@@ -13,6 +14,7 @@ namespace eHyperStore.ViewModels.Catalog.Products
 
         public int Stock { get; set; }
 
+        [Required(ErrorMessage = "Please enter name product")]
         public string Name { get; set; }
 
         public string Description { get; set; }
