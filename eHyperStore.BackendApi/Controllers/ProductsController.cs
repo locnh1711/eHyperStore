@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace eHyperStore.BackendApi.Controllers
 {
-    //api/product
+    //api/products
     [Route("api/[controller]")]
     [ApiController]
     [Authorize]
@@ -15,7 +15,8 @@ namespace eHyperStore.BackendApi.Controllers
     {
         private readonly IProductService _productService;
 
-        public ProductsController(IProductService productService)
+        public ProductsController(
+            IProductService productService)
         {
             _productService = productService;
         }
@@ -37,6 +38,7 @@ namespace eHyperStore.BackendApi.Controllers
         }
 
         [HttpPost]
+        [Consumes("multipart/form-data")]
         public async Task<IActionResult> Create([FromForm] ProductCreateRequest request)
         {
             if (!ModelState.IsValid)

@@ -39,5 +39,29 @@ namespace eHyperStore.AdminApp.Controllers
             }
             return View(data);
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [Consumes("multipart/form-data")]
+        public async Task<IActionResult> Create([FromForm] ProductCreateRequest request)
+        {
+            if (!ModelState.IsValid)
+                return View(request);
+
+            var result = await _productApiClient.CreateProduct(request);
+            if (result)
+            {
+                TempData["result"] = "Create new product success";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "Create new product fail");
+            return View(request);
+        }
     }
 }

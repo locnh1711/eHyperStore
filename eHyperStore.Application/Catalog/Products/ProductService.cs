@@ -38,6 +38,7 @@ namespace eHyperStore.Application.Catalog.Products
                 ProductId = productId,
                 SortOrder = request.SortOrder
             };
+
             if (request.ImageFile != null)
             {
                 productImage.ImagePath = await this.SaveFile(request.ImageFile);
@@ -95,7 +96,7 @@ namespace eHyperStore.Application.Catalog.Products
                 };
             }
             _context.Products.Add(product);
-            return await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
             return product.Id;
         }
 
@@ -117,22 +118,23 @@ namespace eHyperStore.Application.Catalog.Products
 
         public async Task<PagedResult<ProductVm>> GetAllPaging(GetManageProductPagingRequest request)
         {
-            // Select join
+            //1. Select join
             var query = from p in _context.Products
                         join pt in _context.ProductTranslations on p.Id equals pt.ProductId
-                        join pic in _context.ProductInCategories on p.Id equals pic.ProductId
-                        join c in _context.Categories on pic.CategoryId equals c.Id
+                        //join pic in _context.ProductInCategories on p.Id equals pic.ProductId
+                        //join c in _context.Categories on pic.CategoryId equals c.Id
                         where pt.LanguageId == request.LanguageId
-                        select new { p, pt, pic };
-            // Filter
+                        select new { p, pt };
+            //2. filter
             if (!string.IsNullOrEmpty(request.Keyword))
                 query = query.Where(x => x.pt.Name.Contains(request.Keyword));
 
-            if (request.CategoryIds != null && request.CategoryIds.Count > 0)
-            {
-                query = query.Where(p => request.CategoryIds.Contains(p.pic.CategoryId));
-            }
-            // Paging
+            //if (request.CategoryIds != null && request.CategoryIds.Count > 0)
+            //{
+            //    query = query.Where(p => request.CategoryIds.Contains(p.pic.CategoryId));
+            //}
+
+            //3. Paging
             int totalRow = await query.CountAsync();
 
             var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
@@ -153,12 +155,13 @@ namespace eHyperStore.Application.Catalog.Products
                     Stock = x.p.Stock,
                     ViewCount = x.p.ViewCount
                 }).ToListAsync();
-            // Select and projection
+
+            //4. Select and projection
             var pagedResult = new PagedResult<ProductVm>()
             {
                 TotalRecords = totalRow,
-                PageIndex = request.PageIndex,
                 PageSize = request.PageSize,
+                PageIndex = request.PageIndex,
                 Items = data
             };
             return pagedResult;
@@ -167,7 +170,8 @@ namespace eHyperStore.Application.Catalog.Products
         public async Task<ProductVm> GetById(int productId, string languageId)
         {
             var product = await _context.Products.FindAsync(productId);
-            var productTranslation = await _context.ProductTranslations.FirstOrDefaultAsync(x => x.ProductId == productId && x.LanguageId == languageId);
+            var productTranslation = await _context.ProductTranslations.FirstOrDefaultAsync(x => x.ProductId == productId
+            && x.LanguageId == languageId);
 
             var productViewModel = new ProductVm()
             {
@@ -193,6 +197,7 @@ namespace eHyperStore.Application.Catalog.Products
             var image = await _context.ProductImages.FindAsync(imageId);
             if (image == null)
                 throw new EHyperException($"Cannot find an image with id {imageId}");
+
             var viewModel = new ProductImageViewModel()
             {
                 Caption = image.Caption,
@@ -267,6 +272,7 @@ namespace eHyperStore.Application.Catalog.Products
             var productImage = await _context.ProductImages.FindAsync(imageId);
             if (productImage == null)
                 throw new EHyperException($"Cannot find an image with id {imageId}");
+
             if (request.ImageFile != null)
             {
                 productImage.ImagePath = await this.SaveFile(request.ImageFile);
@@ -302,19 +308,19 @@ namespace eHyperStore.Application.Catalog.Products
 
         public async Task<PagedResult<ProductVm>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request)
         {
-            // Select join
+            //1. Select join
             var query = from p in _context.Products
                         join pt in _context.ProductTranslations on p.Id equals pt.ProductId
                         join pic in _context.ProductInCategories on p.Id equals pic.ProductId
                         join c in _context.Categories on pic.CategoryId equals c.Id
                         where pt.LanguageId == languageId
                         select new { p, pt, pic };
-            // Filter
+            //2. filter
             if (request.CategoryId.HasValue && request.CategoryId.Value > 0)
             {
                 query = query.Where(p => p.pic.CategoryId == request.CategoryId);
             }
-            // Paging
+            //3. Paging
             int totalRow = await query.CountAsync();
 
             var data = await query.Skip((request.PageIndex - 1) * request.PageSize)
@@ -336,12 +342,12 @@ namespace eHyperStore.Application.Catalog.Products
                     ViewCount = x.p.ViewCount
                 }).ToListAsync();
 
-            // Select and projection
+            //4. Select and projection
             var pagedResult = new PagedResult<ProductVm>()
             {
                 TotalRecords = totalRow,
-                PageIndex = request.PageIndex,
                 PageSize = request.PageSize,
+                PageIndex = request.PageIndex,
                 Items = data
             };
             return pagedResult;
