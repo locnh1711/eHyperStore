@@ -1,3 +1,4 @@
+using eHyperStore.Application.Catalog.Categories;
 using eHyperStore.Application.Catalog.Products;
 using eHyperStore.Application.Common;
 using eHyperStore.Application.System.Languages;
@@ -53,6 +54,7 @@ namespace eHyperStore.BackendApi
             services.AddTransient<IUserService, UserService>();
             services.AddTransient<ILanguageService, LanguageService>();
             services.AddTransient<IRoleService, RoleService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
