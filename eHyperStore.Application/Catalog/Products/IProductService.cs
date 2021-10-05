@@ -36,5 +36,7 @@ namespace eHyperStore.Application.Catalog.Products
         Task<ProductVm> GetById(int productId, string languageId);
 
         Task<PagedResult<ProductVm>> GetAllByCategoryId(string languageId, GetPublicProductPagingRequest request);
+
+        Task<ApiResult<bool>> CategoryAssign(int id, CategoryAssignRequest request);
     }
 }
