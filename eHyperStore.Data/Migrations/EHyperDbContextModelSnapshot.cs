@@ -180,7 +180,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = new Guid("09a7bcdf-396c-4e25-b159-3f5d5beb671b"),
-                            ConcurrencyStamp = "8257c90f-0708-4822-b363-166449ff1d85",
+                            ConcurrencyStamp = "7babd98e-3dc8-4d69-8ae1-7dfb0bc5babe",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -257,7 +257,7 @@ namespace eHyperStore.Data.Migrations
                         {
                             Id = new Guid("42f80cce-24c7-491b-8c70-b1908c66df23"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "658b4988-08be-4034-b582-b45f23526347",
+                            ConcurrencyStamp = "dda96597-73b0-4029-8b6f-13dd6978a750",
                             Dob = new DateTime(1999, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "locnhgcs17219@fpt.edu.vn",
                             EmailConfirmed = true,
@@ -266,7 +266,7 @@ namespace eHyperStore.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "locnhgcs17219@fpt.edu.vn",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEChxFsRv5ZNAJ8ODy0T47PbpyN5q+uDWAgMfsEuLdxil/c/fBk+rAQzHjteR5UhNfQ==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEEfma+B7ULMVv1eY1fAco81mSnzb9wudahW/LZ9Yqch7E9Rgh5sGWfFxcDgk72ZUFw==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -400,41 +400,41 @@ namespace eHyperStore.Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            LanguageId = "vi-VN",
-                            Name = "Áo nam",
-                            SeoAlias = "ao-nam",
-                            SeoDescription = "Sản phẩm áo thời trang nam",
-                            SeoTitle = "Sản phẩm áo thời trang nam"
+                            LanguageId = "vi",
+                            Name = "Giày nam",
+                            SeoAlias = "giay-nam",
+                            SeoDescription = "Sản phẩm giày thời trang nam",
+                            SeoTitle = "Sản phẩm giày thời trang nam"
                         },
                         new
                         {
                             Id = 2,
                             CategoryId = 1,
-                            LanguageId = "en-US",
-                            Name = "Men Shirt",
-                            SeoAlias = "men-shirt",
-                            SeoDescription = "The shirt products for men",
-                            SeoTitle = "The shirt products for men"
+                            LanguageId = "en",
+                            Name = "Men Shoes",
+                            SeoAlias = "men-shoes",
+                            SeoDescription = "Men's fashion shoes",
+                            SeoTitle = "Men's fashion shoes"
                         },
                         new
                         {
                             Id = 3,
                             CategoryId = 2,
-                            LanguageId = "vi-VN",
-                            Name = "Áo nữ",
-                            SeoAlias = "ao-nu",
-                            SeoDescription = "Sản phẩm áo thời trang nữ",
-                            SeoTitle = "Sản phẩm áo thời trang women"
+                            LanguageId = "vi",
+                            Name = "Giày nữ",
+                            SeoAlias = "giay-nu",
+                            SeoDescription = "Sản phẩm giày thời trang nữ",
+                            SeoTitle = "Sản phẩm giày thời trang nữ"
                         },
                         new
                         {
                             Id = 4,
                             CategoryId = 2,
-                            LanguageId = "en-US",
-                            Name = "Women Shirt",
-                            SeoAlias = "women-shirt",
-                            SeoDescription = "The shirt products for women",
-                            SeoTitle = "The shirt products for women"
+                            LanguageId = "en",
+                            Name = "Women Shoes",
+                            SeoAlias = "women-shoes",
+                            SeoDescription = "Women's fashion shoes",
+                            SeoTitle = "Women's fashion shoes"
                         });
                 });
 
@@ -496,14 +496,14 @@ namespace eHyperStore.Data.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "vi-VN",
-                            IsDefault = true,
+                            Id = "vi",
+                            IsDefault = false,
                             Name = "Tiếng Việt"
                         },
                         new
                         {
-                            Id = "en-US",
-                            IsDefault = false,
+                            Id = "en",
+                            IsDefault = true,
                             Name = "English"
                         });
                 });
@@ -593,9 +593,6 @@ namespace eHyperStore.Data.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<string>("SeoAlias")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("Stock")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
@@ -614,7 +611,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 9, 2, 0, 29, 30, 152, DateTimeKind.Local).AddTicks(1892),
+                            DateCreated = new DateTime(2021, 10, 9, 0, 4, 6, 661, DateTimeKind.Local).AddTicks(3520),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
@@ -737,26 +734,26 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Áo sơ mi nam trắng Việt Tiến",
-                            Details = "Áo sơ mi nam trắng Việt Tiến",
-                            LanguageId = "vi-VN",
-                            Name = "Áo sơ mi nam trắng Việt Tiến",
+                            Description = "Giày thể thao nam Nike",
+                            Details = "Giày thể thao nam Nike",
+                            LanguageId = "vi",
+                            Name = "Giày thể thao nam Nike",
                             ProductId = 1,
-                            SeoAlias = "ao-so-mi-nam-trang-viet-tien",
-                            SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
-                            SeoTitle = "Áo sơ mi nam trắng Việt Tiến"
+                            SeoAlias = "giay-the-thao-nam-nike",
+                            SeoDescription = "Giày thể thao nam Nike",
+                            SeoTitle = "Giày thể thao nam Nike"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Viet Tien Men Shirt",
-                            Details = "Viet Tien Men Shirt",
-                            LanguageId = "en-US",
-                            Name = "Viet Tien Men Shirt",
+                            Description = "Nike Men's Sports Shoes",
+                            Details = "Nike Men's Sports Shoes",
+                            LanguageId = "en",
+                            Name = "Nike Men's Sports Shoes",
                             ProductId = 1,
-                            SeoAlias = "viet-tien-men-shirt",
-                            SeoDescription = "Viet Tien Men Shirt",
-                            SeoTitle = "Viet Tien Men Shirt"
+                            SeoAlias = "nike-men-sport-shoes",
+                            SeoDescription = "Nike Men's Sports Shoes",
+                            SeoTitle = "Nike Men's Sports Shoes"
                         });
                 });
 
