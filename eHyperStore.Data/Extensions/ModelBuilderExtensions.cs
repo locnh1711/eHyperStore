@@ -18,8 +18,8 @@ namespace eHyperStore.Data.Extensions
                new AppConfig() { Key = "HomeDescription", Value = "This is description of eHyperStore" }
                );
             modelBuilder.Entity<Language>().HasData(
-                new Language() { Id = "vi-VN", Name = "Tiếng Việt", IsDefault = true },
-                new Language() { Id = "en-US", Name = "English", IsDefault = false });
+                new Language() { Id = "vi", Name = "Tiếng Việt", IsDefault = false },
+                new Language() { Id = "en", Name = "English", IsDefault = true });
 
             modelBuilder.Entity<Category>().HasData(
                 new Category()
@@ -40,10 +40,10 @@ namespace eHyperStore.Data.Extensions
                 });
 
             modelBuilder.Entity<CategoryTranslation>().HasData(
-                  new CategoryTranslation() { Id = 1, CategoryId = 1, Name = "Áo nam", LanguageId = "vi-VN", SeoAlias = "ao-nam", SeoDescription = "Sản phẩm áo thời trang nam", SeoTitle = "Sản phẩm áo thời trang nam" },
-                  new CategoryTranslation() { Id = 2, CategoryId = 1, Name = "Men Shirt", LanguageId = "en-US", SeoAlias = "men-shirt", SeoDescription = "The shirt products for men", SeoTitle = "The shirt products for men" },
-                  new CategoryTranslation() { Id = 3, CategoryId = 2, Name = "Áo nữ", LanguageId = "vi-VN", SeoAlias = "ao-nu", SeoDescription = "Sản phẩm áo thời trang nữ", SeoTitle = "Sản phẩm áo thời trang women" },
-                  new CategoryTranslation() { Id = 4, CategoryId = 2, Name = "Women Shirt", LanguageId = "en-US", SeoAlias = "women-shirt", SeoDescription = "The shirt products for women", SeoTitle = "The shirt products for women" }
+                  new CategoryTranslation() { Id = 1, CategoryId = 1, Name = "Giày nam", LanguageId = "vi", SeoAlias = "giay-nam", SeoDescription = "Sản phẩm giày thời trang nam", SeoTitle = "Sản phẩm giày thời trang nam" },
+                  new CategoryTranslation() { Id = 2, CategoryId = 1, Name = "Men Shoes", LanguageId = "en", SeoAlias = "men-shoes", SeoDescription = "Men's fashion shoes", SeoTitle = "Men's fashion shoes" },
+                  new CategoryTranslation() { Id = 3, CategoryId = 2, Name = "Giày nữ", LanguageId = "vi", SeoAlias = "giay-nu", SeoDescription = "Sản phẩm giày thời trang nữ", SeoTitle = "Sản phẩm giày thời trang nữ" },
+                  new CategoryTranslation() { Id = 4, CategoryId = 2, Name = "Women Shoes", LanguageId = "en", SeoAlias = "women-shoes", SeoDescription = "Women's fashion shoes", SeoTitle = "Women's fashion shoes" }
                     );
 
             modelBuilder.Entity<Product>().HasData(
@@ -61,25 +61,25 @@ namespace eHyperStore.Data.Extensions
                 {
                     Id = 1,
                     ProductId = 1,
-                    Name = "Áo sơ mi nam trắng Việt Tiến",
-                    LanguageId = "vi-VN",
-                    SeoAlias = "ao-so-mi-nam-trang-viet-tien",
-                    SeoDescription = "Áo sơ mi nam trắng Việt Tiến",
-                    SeoTitle = "Áo sơ mi nam trắng Việt Tiến",
-                    Details = "Áo sơ mi nam trắng Việt Tiến",
-                    Description = "Áo sơ mi nam trắng Việt Tiến"
+                    Name = "Giày thể thao nam Nike",
+                    LanguageId = "vi",
+                    SeoAlias = "giay-the-thao-nam-nike",
+                    SeoDescription = "Giày thể thao nam Nike",
+                    SeoTitle = "Giày thể thao nam Nike",
+                    Details = "Giày thể thao nam Nike",
+                    Description = "Giày thể thao nam Nike"
                 },
                 new ProductTranslation()
                 {
                     Id = 2,
                     ProductId = 1,
-                    Name = "Viet Tien Men Shirt",
-                    LanguageId = "en-US",
-                    SeoAlias = "viet-tien-men-shirt",
-                    SeoDescription = "Viet Tien Men Shirt",
-                    SeoTitle = "Viet Tien Men Shirt",
-                    Details = "Viet Tien Men Shirt",
-                    Description = "Viet Tien Men Shirt"
+                    Name = "Nike Men's Sports Shoes",
+                    LanguageId = "en",
+                    SeoAlias = "nike-men-sport-shoes",
+                    SeoDescription = "Nike Men's Sports Shoes",
+                    SeoTitle = "Nike Men's Sports Shoes",
+                    Details = "Nike Men's Sports Shoes",
+                    Description = "Nike Men's Sports Shoes"
                 });
             modelBuilder.Entity<ProductInCategory>().HasData(
                 new ProductInCategory() { ProductId = 1, CategoryId = 1 }
@@ -104,7 +104,7 @@ namespace eHyperStore.Data.Extensions
                 Email = "locnhgcs17219@fpt.edu.vn",
                 NormalizedEmail = "locnhgcs17219@fpt.edu.vn",
                 EmailConfirmed = true,
-                PasswordHash = hasher.HashPassword(null, "Hieuloc12345"),
+                PasswordHash = hasher.HashPassword(null, "Hieuloc@12345"),
                 SecurityStamp = string.Empty,
                 FirstName = "Loc",
                 LastName = "Nguyen",
