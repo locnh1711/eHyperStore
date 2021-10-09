@@ -447,7 +447,7 @@ namespace eHyperStore.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AppRoles",
                 columns: new[] { "Id", "ConcurrencyStamp", "Description", "Name", "NormalizedName" },
-                values: new object[] { new Guid("09a7bcdf-396c-4e25-b159-3f5d5beb671b"), "7babd98e-3dc8-4d69-8ae1-7dfb0bc5babe", "Administrator role", "admin", "admin" });
+                values: new object[] { new Guid("09a7bcdf-396c-4e25-b159-3f5d5beb671b"), "6b3af18e-706c-46f3-a74f-359b95902db9", "Administrator role", "admin", "admin" });
 
             migrationBuilder.InsertData(
                 table: "AppUserRoles",
@@ -457,7 +457,7 @@ namespace eHyperStore.Data.Migrations
             migrationBuilder.InsertData(
                 table: "AppUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Dob", "Email", "EmailConfirmed", "FirstName", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { new Guid("42f80cce-24c7-491b-8c70-b1908c66df23"), 0, "dda96597-73b0-4029-8b6f-13dd6978a750", new DateTime(1999, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "locnhgcs17219@fpt.edu.vn", true, "Loc", "Nguyen", false, null, "locnhgcs17219@fpt.edu.vn", "admin", "AQAAAAEAACcQAAAAEEfma+B7ULMVv1eY1fAco81mSnzb9wudahW/LZ9Yqch7E9Rgh5sGWfFxcDgk72ZUFw==", null, false, "", false, "admin" });
+                values: new object[] { new Guid("42f80cce-24c7-491b-8c70-b1908c66df23"), 0, "3c652ecd-5102-4625-a027-5efb716d1d97", new DateTime(1999, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified), "locnhgcs17219@fpt.edu.vn", true, "Loc", "Nguyen", false, null, "locnhgcs17219@fpt.edu.vn", "admin", "AQAAAAEAACcQAAAAEAVWZz++Lm4YZZ0oIBYlcu+H+005DirIeHQjrOQfIEGpoRl62eUIjXwRBW1GuYFxbg==", null, false, "", false, "admin" });
 
             migrationBuilder.InsertData(
                 table: "Categories",
@@ -480,7 +480,7 @@ namespace eHyperStore.Data.Migrations
             migrationBuilder.InsertData(
                 table: "Products",
                 columns: new[] { "Id", "DateCreated", "OriginalPrice", "Price" },
-                values: new object[] { 1, new DateTime(2021, 10, 9, 0, 4, 6, 661, DateTimeKind.Local).AddTicks(3520), 100000m, 200000m });
+                values: new object[] { 1, new DateTime(2021, 10, 10, 0, 30, 28, 72, DateTimeKind.Local).AddTicks(723), 100000m, 200000m });
 
             migrationBuilder.InsertData(
                 table: "CategoryTranslations",

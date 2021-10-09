@@ -10,7 +10,7 @@ using eHyperStore.Data.EF;
 namespace eHyperStore.Data.Migrations
 {
     [DbContext(typeof(EHyperDbContext))]
-    [Migration("20211008170407_Initial")]
+    [Migration("20211009173028_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -182,7 +182,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = new Guid("09a7bcdf-396c-4e25-b159-3f5d5beb671b"),
-                            ConcurrencyStamp = "7babd98e-3dc8-4d69-8ae1-7dfb0bc5babe",
+                            ConcurrencyStamp = "6b3af18e-706c-46f3-a74f-359b95902db9",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -259,7 +259,7 @@ namespace eHyperStore.Data.Migrations
                         {
                             Id = new Guid("42f80cce-24c7-491b-8c70-b1908c66df23"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "dda96597-73b0-4029-8b6f-13dd6978a750",
+                            ConcurrencyStamp = "3c652ecd-5102-4625-a027-5efb716d1d97",
                             Dob = new DateTime(1999, 11, 17, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "locnhgcs17219@fpt.edu.vn",
                             EmailConfirmed = true,
@@ -268,7 +268,7 @@ namespace eHyperStore.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "locnhgcs17219@fpt.edu.vn",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEEfma+B7ULMVv1eY1fAco81mSnzb9wudahW/LZ9Yqch7E9Rgh5sGWfFxcDgk72ZUFw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEAVWZz++Lm4YZZ0oIBYlcu+H+005DirIeHQjrOQfIEGpoRl62eUIjXwRBW1GuYFxbg==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
@@ -613,7 +613,7 @@ namespace eHyperStore.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2021, 10, 9, 0, 4, 6, 661, DateTimeKind.Local).AddTicks(3520),
+                            DateCreated = new DateTime(2021, 10, 10, 0, 30, 28, 72, DateTimeKind.Local).AddTicks(723),
                             OriginalPrice = 100000m,
                             Price = 200000m,
                             Stock = 0,
