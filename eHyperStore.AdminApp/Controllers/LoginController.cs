@@ -1,4 +1,4 @@
-﻿using eHyperStore.AdminApp.Services;
+﻿using eHyperStore.ApiIntegration;
 using eHyperStore.Utilities.Constants;
 using eHyperStore.ViewModels.System.Users;
 using Microsoft.AspNetCore.Authentication;

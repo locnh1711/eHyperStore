@@ -1,4 +1,4 @@
-﻿using eHyperStore.AdminApp.Services;
+﻿using eHyperStore.ApiIntegration;
 using eHyperStore.Utilities.Constants;
 using eHyperStore.ViewModels.Catalog.Products;
 using eHyperStore.ViewModels.Common;

@@ -8,4 +8,8 @@
     <Folder Include="wwwroot\themes\less\oregional\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\eHyperStore.ApiIntegration\eHyperStore.ApiIntegration.csproj" />
+  </ItemGroup>
+
 </Project>

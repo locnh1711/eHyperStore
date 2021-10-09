@@ -1,5 +1,5 @@
 ﻿using eHyperStore.AdminApp.Models;
-using eHyperStore.AdminApp.Services;
+using eHyperStore.ApiIntegration;
 using eHyperStore.Utilities.Constants;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
