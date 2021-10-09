@@ -24,5 +24,7 @@ namespace eHyperStore.ViewModels.Catalog.Products
         public string LanguageId { get; set; }
 
         public IFormFile ThumbnailImage { get; set; }
+
+        public bool? IsFeatured { get; set; }
     }
 }
