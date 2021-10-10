@@ -81,5 +81,7 @@ namespace eHyperStore.Data.EF
         public DbSet<Transaction> Transactions { get; set; }
 
         public DbSet<ProductImage> ProductImages { get; set; }
+
+        public DbSet<Slide> Slides { get; set; }
     }
 }
