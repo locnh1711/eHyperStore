@@ -1,7 +1,7 @@
-﻿using eHyperStore.AdminApp.Services;
-using eHyperStore.Utilities.Constants;
+﻿using eHyperStore.Utilities.Constants;
 using eHyperStore.ViewModels.Catalog.Products;
 using eHyperStore.ViewModels.Common;
+using eShopSolution.ApiIntegration;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
