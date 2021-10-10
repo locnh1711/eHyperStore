@@ -1,6 +1,6 @@
-﻿using eHyperStore.AdminApp.Services;
-using eHyperStore.ViewModels.Common;
+﻿using eHyperStore.ViewModels.Common;
 using eHyperStore.ViewModels.System.Users;
+using eShopSolution.ApiIntegration;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Http;
