@@ -40,6 +40,8 @@ namespace eHyperStore.Data.EF
             modelBuilder.ApplyConfiguration(new ProductTranslationConfiguration());
             modelBuilder.ApplyConfiguration(new PromotionConfiguration());
 
+            modelBuilder.ApplyConfiguration(new SlideConfiguration());
+
             modelBuilder.ApplyConfiguration(new TransactionConfiguration());
 
             modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("AppUserClaims");
