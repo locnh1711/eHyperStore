@@ -4,6 +4,7 @@ using eHyperStore.Application.Common;
 using eHyperStore.Application.System.Languages;
 using eHyperStore.Application.System.Roles;
 using eHyperStore.Application.System.Users;
+using eHyperStore.Application.Utilities.Slides;
 using eHyperStore.Data.EF;
 using eHyperStore.Data.Entities;
 using eHyperStore.Utilities.Constants;
@@ -55,6 +56,7 @@ namespace eHyperStore.BackendApi
             services.AddTransient<ILanguageService, LanguageService>();
             services.AddTransient<IRoleService, RoleService>();
             services.AddTransient<ICategoryService, CategoryService>();
+            services.AddTransient<ISlideService, SlideService>();
 
             services.AddTransient<UserManager<AppUser>, UserManager<AppUser>>();
             services.AddTransient<SignInManager<AppUser>, SignInManager<AppUser>>();
