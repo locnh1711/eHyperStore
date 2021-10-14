@@ -3,7 +3,7 @@ using eHyperStore.ViewModels.System.Users;
 using System;
 using System.Threading.Tasks;
 
-namespace eShopSolution.ApiIntegration
+namespace eHyperStore.ApiIntegration
 {
     public interface IUserApiClient
     {

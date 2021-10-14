@@ -1,4 +1,4 @@
-﻿using eShopSolution.ApiIntegration;
+﻿using eHyperStore.ApiIntegration;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

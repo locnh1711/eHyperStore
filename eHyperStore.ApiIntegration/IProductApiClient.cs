@@ -3,7 +3,7 @@ using eHyperStore.ViewModels.Common;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace eShopSolution.ApiIntegration
+namespace eHyperStore.ApiIntegration
 {
     public interface IProductApiClient
     {
