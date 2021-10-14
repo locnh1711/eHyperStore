@@ -3,7 +3,7 @@ using eHyperStore.ViewModels.System.Roles;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace eShopSolution.ApiIntegration
+namespace eHyperStore.ApiIntegration
 {
     public interface IRoleApiClient
     {

@@ -1,5 +1,5 @@
+using eHyperStore.ApiIntegration;
 using eHyperStore.WebApp.LocalizationResources;
-using eShopSolution.ApiIntegration;
 using LazZiya.ExpressLocalization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

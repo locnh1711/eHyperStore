@@ -1,6 +1,6 @@
-﻿using eHyperStore.Utilities.Constants;
+﻿using eHyperStore.ApiIntegration;
+using eHyperStore.Utilities.Constants;
 using eHyperStore.WebApp.Models;
-using eShopSolution.ApiIntegration;
 using LazZiya.ExpressLocalization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;

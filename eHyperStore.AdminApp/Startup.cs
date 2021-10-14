@@ -1,5 +1,5 @@
+using eHyperStore.ApiIntegration;
 using eHyperStore.ViewModels.System.Users;
-using eShopSolution.ApiIntegration;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
