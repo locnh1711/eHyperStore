@@ -26,7 +26,6 @@ namespace eHyperStore.WebApp.Controllers
             return View(new ProductDetailViewModel()
             {
                 Product = product,
-                Category = await _categoryApiClient.GetById(culture, id)
             });
         }
 
