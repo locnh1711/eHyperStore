@@ -7,6 +7,7 @@ namespace eHyperStore.Utilities.Constants
     public class SystemConstants
     {
         public const string MainConnectionString = "eHyperStoreDb";
+        public const string CartSession = "CartSession";
 
         public class AppSettings
         {
