@@ -1,5 +1,7 @@
 using eHyperStore.ApiIntegration;
+using eHyperStore.ViewModels.System.Users;
 using eHyperStore.WebApp.LocalizationResources;
+using FluentValidation.AspNetCore;
 using LazZiya.ExpressLocalization;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
@@ -39,6 +41,7 @@ namespace eHyperStore.WebApp
             };
 
             services.AddControllersWithViews()
+                .AddFluentValidation(fv => fv.RegisterValidatorsFromAssemblyContaining<LoginRequestValidator>())
                 .AddExpressLocalization<ExpressLocalizationResource, ViewLocalizationResource>(ops =>
                 {
                     // When using all the culture providers, the localization process will
