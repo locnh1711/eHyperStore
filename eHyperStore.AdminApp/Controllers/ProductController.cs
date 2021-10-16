@@ -56,6 +56,14 @@ namespace eHyperStore.AdminApp.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            var languageId = HttpContext.Session.GetString(SystemConstants.AppSettings.DefaultLanguageId);
+            var product = await _productApiClient.GetById(id, languageId);
+            return View(product);
+        }
+
+        [HttpGet]
         public IActionResult Create()
         {
             return View();
