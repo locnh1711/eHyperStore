@@ -1,4 +1,6 @@
 ﻿using eHyperStore.Application.Catalog.Categories;
+using eHyperStore.ViewModels.Catalog.Categories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -32,6 +34,14 @@ namespace eHyperStore.BackendApi.Controllers
         {
             var category = await _categoryService.GetById(languageId, id);
             return Ok(category);
+        }
+
+        //http://localhost/api/users/paging?pageIndex=1&pageSize=10&keyword=
+        [HttpGet("paging")]
+        public async Task<IActionResult> GetAllPaging([FromQuery] GetCategoryPagingRequest request, string languageId)
+        {
+            var products = await _categoryService.GetCategoryPaging(request, languageId);
+            return Ok(products);
         }
     }
 }
